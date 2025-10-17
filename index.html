@@ -1,56 +1,186 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LeadBridge — Home</title>
+  <title>LeadBridge — Business Leads That Convert</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    :root{
-      --accent: #00C6FF; /* teal/blue */
-      --dark: rgba(2,10,25,0.86);
-      --glass: rgba(255,255,255,0.06);
-      --text: #eaf4ff;
+    :root {
+      --accent: #00c3ff;
+      --accent2: #00ffa3;
+      --text-light: #eaf7ff;
+      --text-dark: #012032;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:'Poppins',sans-serif;
-      color:var(--text);
-      background:linear-gradient(120deg,#001122 0%, #002b3a 60%), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80') center/cover fixed no-repeat;
-      min-height:100vh;
-      -webkit-font-smoothing:antialiased;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-light);
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80') center/cover fixed no-repeat;
+      min-height: 100vh;
+      position: relative;
     }
-    /* overlay blur */
-    body::before{
-      content:"";position:fixed;inset:0;background:var(--dark);backdrop-filter:blur(8px);z-index:-1;
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 15, 35, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: -1;
     }
-    nav{
-      width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 6%;position:sticky;top:0;background:rgba(0,0,0,0.18);backdrop-filter:blur(6px);z-index:20;border-bottom:1px solid rgba(255,255,255,0.03)
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    .logo{font-weight:700;color:var(--text);letter-spacing:0.4px}
-    .nav-links{display:flex;gap:28px;align-items:center}
-    .nav-links a{color:var(--text);text-decoration:none;font-weight:600;transition:.22s}
-    .nav-links a:hover{color:var(--accent);transform:translateY(-2px)}
-    .cta{background:linear-gradient(90deg,var(--accent),#00A8FF);padding:10px 18px;border-radius:10px;color:#021a2b;text-decoration:none;font-weight:700}
-    .hero{display:flex;gap:40px;align-items:center;padding:80px 6%;min-height:78vh}
-    .left{flex:1;animation:fadeLeft .9s ease both}
-    .left h1{font-size:3.2rem;line-height:1.02;color:linear-gradient(var(--accent));margin-bottom:14px}
-    .left h1 .accent{background:linear-gradient(90deg,var(--accent),#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .left p{max-width:720px;color:#d9e9ff;font-size:1.05rem;margin-bottom:20px}
-    .primary-btn{display:inline-block;background:linear-gradient(90deg,var(--accent),#FFD700);padding:12px 26px;border-radius:10px;color:#012032;font-weight:700;text-decoration:none}
-    .right{width:420px;background:var(--glass);padding:26px;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,0.6);backdrop-filter:blur(6px);animation:fadeRight .9s ease both}
-    .form-title{color:var(--accent);font-weight:700;margin-bottom:6px}
-    input,textarea{width:100%;padding:12px;border-radius:8px;border:none;background:rgba(255,255,255,0.02);color:var(--text);margin-bottom:12px;outline:2px solid transparent;transition:.18s}
-    input:focus,textarea:focus{outline:2px solid rgba(0,198,255,0.18)}
-    .send{background:var(--accent);color:#021a2b;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;width:100%}
-    footer{padding:26px 6%;text-align:center;color:#c7dbff;background:linear-gradient(90deg,rgba(0,0,0,0.16),rgba(0,0,0,0.06))}
-    /* responsive */
-    @media(max-width:900px){.hero{flex-direction:column;padding:40px 6%}.right{width:100%}}
-    @keyframes fadeLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
-    @keyframes fadeRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links a {
+      color: #e4f5ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--accent2);
+    }
+    .cta {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: var(--text-dark);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 100px 6%;
+      min-height: 80vh;
+    }
+    .hero-left {
+      flex: 1;
+      animation: slideIn 0.9s ease both;
+    }
+    .hero-left h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.1;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-left p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #d9f4ff;
+      margin-bottom: 25px;
+    }
+    .hero-left .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: var(--text-dark);
+      padding: 14px 30px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .hero-left .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(0, 255, 180, 0.3);
+    }
+
+    /* Form Box */
+    .hero-right {
+      flex: 0.9;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(0, 255, 180, 0.08);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease both;
+    }
+    .hero-right h2 {
+      font-size: 1.4rem;
+      color: var(--accent2);
+      margin-bottom: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      margin-bottom: 12px;
+      outline: none;
+      font-size: 0.95rem;
+    }
+    input::placeholder, textarea::placeholder { color: #bfefff; }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: var(--text-dark);
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,255,180,0.25);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #bdeaff;
+      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; text-align: center; padding: 70px 6%; }
+      .hero-right { width: 100%; }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="logo">LeadBridge</div>
@@ -63,27 +193,25 @@
     </div>
   </nav>
 
-  <main class="hero">
-    <div class="left">
-      <h1>Your Quality Marketing Assistant — <span class="accent">Success</span></h1>
-      <p><strong>LeadBridge</strong> delivers verified, targeted business leads so you can focus on closing deals. We serve real estate, construction, digital agencies, B2B sellers, and more — providing up-to-date prospects with contact info and buyer intent signals.</p>
-      <p>Why choose us? AI-driven targeting • manual verification • industry segmentation • weekly updates.</p>
-      <a class="primary-btn" href="contact.html">Hire Us</a>
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Grow Your Business with Real Verified Leads</h1>
+      <p>We help businesses connect with real buyers and clients by delivering 100% verified, targeted leads — helping you focus on closing deals, not chasing prospects.</p>
+      <a href="contact.html" class="btn">Get Free Sample</a>
     </div>
 
-    <aside class="right">
-      <div class="form-title">Let's start with a <strong>FREE TEST WORK</strong></div>
-      <form onsubmit="event.preventDefault(); window.location='mailto:sales.leadbridge@gmail.com?subject=LeadBridge%20Demo%20Request';">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Business E-mail" required />
-        <input type="text" name="company" placeholder="Company / Industry" />
-        <textarea name="message" placeholder="Tell us what leads you need (city, industry, budget)"></textarea>
-        <button class="send" type="submit">Request Free Test</button>
+    <div class="hero-right">
+      <h2>Request Your Free Test Work</h2>
+      <form onsubmit="event.preventDefault(); window.location='mailto:sales.leadbridge@gmail.com?subject=Free%20Test%20Lead%20Request';">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Business Email" required />
+        <input type="text" placeholder="Company / Industry" />
+        <textarea placeholder="Describe what type of leads you need..."></textarea>
+        <button class="submit-btn">Request Free Test</button>
       </form>
-      <p style="font-size:13px;color:#bfe9ff;margin-top:10px">Or email: <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--accent)">sales.leadbridge@gmail.com</a></p>
-    </aside>
-  </main>
+    </div>
+  </section>
 
-  <footer>© 2025 <strong>LeadBridge</strong> • Premium Verified Business Leads • Phone: +92-XXX-XXXXXXX</footer>
+  <footer>© 2025 LeadBridge • Verified B2B & B2C Leads • sales.leadbridge@gmail.com</footer>
 </body>
 </html>
