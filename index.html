@@ -8,109 +8,110 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
     :root {
-      --primary: #00b4ff;
-      --secondary: #1ee0ff;
-      --dark-bg: #04121f;
-      --nav-bg: linear-gradient(90deg, #02101d 0%, #062a3a 100%);
+      --accent-blue: #007bff;
+      --accent-red: #ff3b3b;
       --text-light: #f7faff;
+      --bg-dark: #04101f;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--text-light);
-      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80') center/cover fixed no-repeat;
+      background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=80') center/cover fixed no-repeat;
       min-height: 100vh;
-      overflow-x: hidden;
       position: relative;
+      overflow-x: hidden;
     }
 
     body::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.6) backdrop-filter(blur(6px));
       z-index: -1;
+      backdrop-filter: blur(4px);
     }
 
-    /* ===== NAVBAR ===== */
+    /* Navbar */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 7%;
-      background: var(--nav-bg);
+      padding: 18px 6%;
+      background: linear-gradient(90deg, #002b5c, #00172f);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
     }
 
-    .logo-area {
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-
-    .logo-area img {
-      width: 55px;
-      height: 55px;
-    }
-
-    .logo-text {
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      color: var(--secondary);
+      color: #00c8ff;
       letter-spacing: 1px;
+    }
+
+    .logo img {
+      height: 38px;
+      width: auto;
+      border-radius: 6px;
     }
 
     .nav-links {
       display: flex;
+      gap: 15px;
       align-items: center;
-      gap: 35px;
     }
 
     .nav-links a {
-      color: #e9f6ff;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.15rem;
+      color: #f1f5ff;
       padding: 10px 20px;
+      font-weight: 600;
+      font-size: 1rem;
       border-radius: 8px;
-      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.05);
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
     }
 
     .nav-links a:hover {
-      background: var(--secondary);
-      color: #04121f;
-      box-shadow: 0 4px 14px rgba(30,224,255,0.5);
+      background: rgba(255,255,255,0.1);
+      border-color: var(--accent-red);
+      color: var(--accent-red);
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255,59,59,0.4);
     }
 
     .cta {
-      background: linear-gradient(145deg, var(--primary), var(--secondary));
-      color: #02101d;
-      padding: 14px 28px;
+      background: linear-gradient(145deg, #00b4ff, #007bff);
+      color: #fff;
+      padding: 12px 24px;
       border-radius: 10px;
       font-weight: 700;
       text-decoration: none;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 12px rgba(0,180,255,0.4);
+      box-shadow: 0 4px 12px rgba(0,180,255,0.5);
       transition: all 0.25s ease;
     }
 
     .cta:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 22px rgba(0,180,255,0.6);
+      box-shadow: 0 8px 25px rgba(0,180,255,0.7);
     }
 
-    /* ===== HERO ===== */
+    /* Hero */
     .hero {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 120px 7%;
       gap: 60px;
+      padding: 100px 6%;
+      min-height: 80vh;
     }
 
     .hero-left {
@@ -119,32 +120,34 @@
     }
 
     .hero-left h1 {
-      font-size: 3.3rem;
-      line-height: 1.2;
+      font-size: 3.4rem;
+      font-weight: 700;
       margin-bottom: 20px;
-      background: linear-gradient(90deg, #fff, var(--secondary));
+      line-height: 1.1;
+      background: linear-gradient(90deg, #fff, #00c8ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-left p {
       max-width: 600px;
-      font-size: 1.15rem;
-      color: #cfeaff;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #d7eaff;
       margin-bottom: 35px;
     }
 
     .hero-left .btn {
       display: inline-block;
-      background: linear-gradient(145deg, var(--primary), var(--secondary));
-      color: #04121f;
+      background: linear-gradient(145deg, #00b4ff, #007bff);
+      color: #fff;
       padding: 15px 40px;
       border-radius: 12px;
       font-weight: 700;
+      font-size: 1.1rem;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,180,255,0.3);
       transition: all 0.25s ease;
-      font-size: 1.1rem;
     }
 
     .hero-left .btn:hover {
@@ -152,16 +155,10 @@
       box-shadow: 0 8px 22px rgba(0,180,255,0.6);
     }
 
-    /* Rotating Headings */
-    #rotating-heading {
-      transition: opacity 0.6s ease-in-out;
-    }
-    .fade-out { opacity: 0; }
-
-    /* ===== FORM ===== */
+    /* Form Box */
     .hero-right {
       flex: 1.1;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 18px;
       padding: 45px;
       box-shadow: 0 0 30px rgba(0, 180, 255, 0.2);
@@ -171,7 +168,7 @@
 
     .hero-right h2 {
       font-size: 1.8rem;
-      color: var(--secondary);
+      color: #00c8ff;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -195,8 +192,8 @@
       padding: 15px;
       border: none;
       border-radius: 12px;
-      background: linear-gradient(145deg, var(--primary), var(--secondary));
-      color: #04121f;
+      background: linear-gradient(145deg, #00b4ff, #007bff);
+      color: #fff;
       font-weight: 700;
       cursor: pointer;
       font-size: 1.05rem;
@@ -209,30 +206,28 @@
       box-shadow: 0 10px 25px rgba(0,180,255,0.6);
     }
 
-    /* ===== PRICING BUTTON SECTION ===== */
-    .pricing-cta {
-      text-align: center;
-      margin: 60px 0;
+    /* Extra Button Below Header */
+    .below-header {
+      text-align: right;
+      margin-right: 6%;
+      margin-top: 10px;
     }
 
-    .pricing-cta a {
+    .below-header a {
       display: inline-block;
-      background: transparent;
-      border: 2px solid var(--secondary);
-      color: var(--secondary);
-      padding: 16px 42px;
-      border-radius: 12px;
+      background: linear-gradient(145deg, #007bff, #0040a0);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 10px;
       font-weight: 700;
-      font-size: 1.2rem;
       text-decoration: none;
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,180,255,0.5);
+      transition: all 0.25s ease;
     }
 
-    .pricing-cta a:hover {
-      background: var(--secondary);
-      color: #02101d;
-      box-shadow: 0 6px 18px rgba(0,180,255,0.6);
-      transform: translateY(-3px);
+    .below-header a:hover {
+      background: linear-gradient(145deg, #ff3b3b, #b30000);
+      box-shadow: 0 8px 22px rgba(255,59,59,0.6);
     }
 
     footer {
@@ -240,8 +235,14 @@
       padding: 25px;
       color: #cfeaff;
       font-size: 0.95rem;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.5);
       border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 950px) {
+      .hero { flex-direction: column; text-align: center; padding: 90px 6%; }
+      .hero-right { width: 100%; }
+      .hero-left h1 { font-size: 2.5rem; }
     }
 
     @keyframes slideIn {
@@ -252,33 +253,31 @@
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @media (max-width: 950px) {
-      .hero { flex-direction: column; text-align: center; padding: 90px 6%; }
-      .hero-right { width: 100%; }
-      .hero-left h1 { font-size: 2.4rem; }
-      .nav-links { flex-wrap: wrap; justify-content: center; }
-    }
   </style>
 </head>
 
 <body>
   <nav>
-    <div class="logo-area">
-      <img src="assets/logo.png" alt="LeadBridge Logo" />
-      <div class="logo-text">LeadBridge</div>
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2022.png" alt="LeadBridge Logo">
+      LeadBridge
     </div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="ourwork.html">Our Work</a>
+      <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
+      <a class="cta" href="contact.html">Get Leads</a>
     </div>
-    <a class="cta" href="contact.html">Get Leads</a>
   </nav>
+
+  <div class="below-header">
+    <a href="pricing.html">Our Pricing</a>
+  </div>
 
   <section class="hero">
     <div class="hero-left">
-      <h1 id="rotating-heading">Boost Your Sales with Real Business Leads</h1>
+      <h1 id="rotating-heading">Grow Faster with Targeted Marketing Data</h1>
       <p>We provide verified B2B and B2C leads tailored to your business goals. Save time, close faster, and grow your sales pipeline with high-converting data.</p>
       <a href="contact.html" class="btn">Get Free Sample</a>
     </div>
@@ -294,10 +293,6 @@
       </form>
     </div>
   </section>
-
-  <div class="pricing-cta">
-    <a href="pricing.html">See Our Pricing</a>
-  </div>
 
   <footer>© 2025 LeadBridge • Verified Business Leads • sales.leadbridge@gmail.com</footer>
 
