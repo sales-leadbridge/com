@@ -1,78 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LeadBridge — Contact</title>
-  <meta name="description" content="Contact LeadBridge for a free lead sample and custom plans." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    :root{--accent:#ff3b3b;--cyan:#00b4ff;--text:#eef6ff;--glass:rgba(255,255,255,0.03);--max-w:940px}
+    :root{--neon:#00f0ff;--vio:#8a4cff;--muted:#b6d6e6;--max:900px}
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{font-family:'Poppins',sans-serif;color:var(--text);background: url('assets/bg.jpg') center top / cover no-repeat fixed;position:relative}
-    body::before{content:"";position:fixed;inset:0;background:linear-gradient(115deg, rgba(0,10,25,0.72), rgba(0,0,0,0.70));z-index:-1}
-    body::after{content:"";position:fixed;inset:0;backdrop-filter: blur(6px);z-index:-1}
-    header{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:linear-gradient(90deg, rgba(0,28,56,0.94), rgba(0,12,20,0.94));backdrop-filter:blur(6px);position:sticky;top:0;z-index:40}
-    .brand{display:flex;align-items:center;gap:10px;color:var(--cyan);font-weight:800}
-    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover}
-    nav{display:flex;gap:16px;align-items:center}
-    .nav-link{display:inline-block;padding:14px 28px;border-radius:12px;background:var(--glass);text-decoration:none;color:var(--text);font-weight:700;font-size:1.3rem}
-    .nav-link:hover{background:linear-gradient(90deg,var(--accent),var(--cyan));color:#04121f;transform:translateY(-3px)}
-    main{max-width:var(--max-w);margin:64px auto;padding:32px;background:rgba(255,255,255,0.02);border-radius:14px;backdrop-filter:blur(4px);box-shadow:0 10px 40px rgba(0,0,0,0.5)}
-    .two{display:flex;gap:22px}
-    .left,.right{flex:1}
-    h1{color:var(--cyan);margin-bottom:10px;font-size:1.9rem}
-    p{color:#dfeeff;line-height:1.7;margin-bottom:12px}
-    input,textarea{width:100%;padding:12px;border-radius:10px;border:none;background:rgba(255,255,255,0.02);color:var(--text);margin-bottom:12px}
-    .btn{background:linear-gradient(145deg,var(--accent),#ff6b6b);color:#04121f;padding:12px 20px;border-radius:10px;border:none;font-weight:800;cursor:pointer}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,59,59,0.12)}
-    @media(max-width:900px){.two{flex-direction:column;padding:8px}}
-    footer{padding:22px 6%;text-align:center;color:#dfeeff;margin-top:40px}
+    html,body{height:100%;font-family:Inter,system-ui,-apple-system}
+    body{color:var(--muted);background:url('assets/bg2.jpg') center top / cover no-repeat fixed}
+    body::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg, rgba(2,8,20,0.72), rgba(0,0,0,0.7));z-index:-1}
+    header{position:sticky;top:0;background:rgba(3,8,20,0.6);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.02)}
+    .nav{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+    nav a{padding:12px 18px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:var(--muted);font-weight:600;margin-left:8px}
+    nav a:hover{background:linear-gradient(90deg,var(--vio),var(--neon));color:#04121f;transform:translateY(-3px)}
+    main{max-width:var(--max);margin:48px auto;padding:22px;background:rgba(255,255,255,0.02);border-radius:12px}
+    h1{color:var(--neon);margin-bottom:10px}
+    .cols{display:flex;gap:18px}
+    .box{flex:1;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.03)}
+    input,textarea{width:100%;padding:12px;border-radius:10px;border:none;background:rgba(255,255,255,0.02);color:var(--muted);margin-bottom:12px}
+    .send{padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--neon),#00c5ff);color:#04121f;font-weight:800;border:none;cursor:pointer}
+    @media(max-width:920px){.cols{flex-direction:column}}
+    footer{max-width:var(--max);margin:40px auto;padding:18px;text-align:center;color:#9cdff5}
   </style>
 </head>
 <body>
   <header>
-    <div class="brand"><img src="assets/logo.png" alt="logo"> LeadBridge</div>
-    <nav aria-label="Main nav">
-      <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="ourwork.html">Our Work</a>
-      <a class="nav-link" href="pricing.html">Pricing</a>
-      <a class="nav-link" href="contact.html">Contact</a>
-    </nav>
-    <div><a class="nav-link" href="contact.html" style="background:linear-gradient(145deg,var(--cyan),#0077cc);color:#04121f;padding:12px 20px;font-size:1.05rem">Get Leads</a></div>
+    <div class="nav">
+      <div style="display:flex;gap:10px;align-items:center"><img src="assets/logo-new.png" alt="" style="width:42px;height:42px;border-radius:8px"><strong style="color:var(--neon)">LeadBridge</strong></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="ourwork.html">Our Work</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main role="main">
-    <div class="two" style="max-width:var(--max-w);margin:48px auto;padding:22px;background:rgba(255,255,255,0.02);border-radius:12px;backdrop-filter:blur(4px)">
-      <div class="left">
-        <h1>Contact Us</h1>
-        <p>Ready to receive high-converting leads? Tell us your target industry, location, and monthly budget — we’ll prepare a free demo list tailored to your needs.</p>
-        <p><strong>Email:</strong> <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--cyan)">sales.leadbridge@gmail.com</a></p>
-        <p><strong>Phone:</strong> +92-XXX-XXXXXXX</p>
-        <p><strong>Address:</strong> Room 112, 207 Greenway Plaza, Houston, TX</p>
-        <p><strong>Business Hours:</strong> Mon–Fri 9:00–18:00 (CST)</p>
+  <main>
+    <h1>Let's Talk — Tell Us About Your Target</h1>
+    <div class="cols">
+      <div class="box">
+        <p style="color:#cfeeff">Email: <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--neon)">sales.leadbridge@gmail.com</a></p>
+        <p style="color:#cfeeff">Phone: +92-XXX-XXXXXXX</p>
+        <p style="color:#cfeeff">Address: Room 112, 207 Greenway Plaza, Houston, TX</p>
+        <p style="color:#cfeeff">Hours: Mon–Fri 9:00–18:00 (CST)</p>
       </div>
 
-      <div class="right">
-        <h2 style="margin-bottom:12px;color:#fff">Send a Message</h2>
+      <div class="box">
         <form onsubmit="event.preventDefault(); window.location='mailto:sales.leadbridge@gmail.com?subject=LeadBridge%20Contact%20Request';">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="company" placeholder="Company / Industry" />
-          <textarea name="message" placeholder="Write your requirements (location, quantity, budget)"></textarea>
-          <button class="btn" type="submit">Send Message</button>
+          <input type="text" name="name" placeholder="Full name" required />
+          <input type="email" name="email" placeholder="Business email" required />
+          <input type="text" name="company" placeholder="Company / industry" />
+          <textarea name="message" placeholder="Tell us target, cities, quantity, budget"></textarea>
+          <button class="send" type="submit">Send Message</button>
         </form>
       </div>
     </div>
   </main>
 
-  <footer>© 2025 LeadBridge • We connect you with buyers that convert • <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--cyan)">sales.leadbridge@gmail.com</a></footer>
+  <footer>© 2025 LeadBridge • High-quality leads for growth • <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--neon)">sales.leadbridge@gmail.com</a></footer>
 
   <script>
     // parallax
     (function(){
-      const speed = 0.32;
+      const speed = 0.28;
       window.addEventListener('scroll', () => {
         const y = window.scrollY;
         document.body.style.backgroundPosition = `center ${-y * speed}px`;
