@@ -2,156 +2,222 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LeadBridge — Home</title>
-  <meta name="description" content="LeadBridge — Premium verified leads for B2B growth." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="LeadBridge — Premium verified leads for B2B growth. Request a free test list." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg-deep:#030617;
-      --panel:#071226;
-      --neon:#00f0ff;
-      --accent:#8a4cff;
-      --muted:#b6d6e6;
-      --max:900px; /* compact layout */
+      --teal:#00b4a6;
+      --gold:#FFD700;
+      --muted:#EAEAEA;
+      --panel: rgba(255,255,255,0.03);
+      --max-w: 1035px; /* ~15% larger than 900 */
+      --nav-size: 1.35rem; /* enlarged nav text */
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    html,body{height:100%;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background-color:#020617}
     body{
       color:var(--muted);
-      background: url('assets/bg2.jpg') center top / cover no-repeat fixed;
-      position:relative;
+      background: url('assets/home.jpg') center top / cover no-repeat fixed;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    /* dark overlay + 30% blur visual */
+    /* overlay + 30% blur visual */
     body::before{
-      content:"";position:fixed;inset:0;background:linear-gradient(180deg, rgba(1,8,20,0.64), rgba(0,0,0,0.72));z-index:-2;
+      content:"";position:fixed;inset:0;background:linear-gradient(180deg, rgba(0,8,20,0.64), rgba(2,6,12,0.72));z-index:-2;
     }
     body::after{
-      content:"";position:fixed;inset:0;backdrop-filter: blur(6px) saturate(0.95);z-index:-1;pointer-events:none;
+      content:"";position:fixed;inset:0;backdrop-filter: blur(6px) contrast(1.02);z-index:-1;pointer-events:none;
     }
 
     /* header */
-    header{position:sticky;top:0;z-index:40;background:rgba(4,12,26,0.55);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.02)}
-    .nav-wrap{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;gap:16px}
+    header{position:sticky;top:0;z-index:80;background:rgba(1,10,20,0.56);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.02)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;gap:18px;padding:14px 18px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:44px;height:44px;border-radius:9px;object-fit:cover}
-    .brand .title{color:var(--neon);font-weight:700;letter-spacing:0.4px}
+    .brand img{width:48px;height:48px;border-radius:10px;object-fit:cover}
+    .brand h1{font-size:1.05rem;color:var(--teal);letter-spacing:0.3px;margin:0;font-weight:700}
 
-    /* nav buttons (new style) */
-    nav{display:flex;gap:12px;align-items:center}
-    .menu-btn{
-      padding:12px 22px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      color:var(--muted);text-decoration:none;font-weight:600;font-size:1rem;border:1px solid rgba(255,255,255,0.03);
-      transition: transform .18s ease, box-shadow .18s ease, color .18s;
-      display:inline-block;
+    nav{margin-left:28px;display:flex;gap:12px;align-items:center}
+    .nav-link{
+      padding:13px 26px;border-radius:12px;background:var(--panel);color:var(--muted);text-decoration:none;font-weight:700;font-size:var(--nav-size);border:1px solid rgba(255,255,255,0.02);
+      transition:transform .18s,box-shadow .18s,color .18s,background .18s;
     }
-    .menu-btn:hover{
-      transform:translateY(-4px) scale(1.03);
-      color:var(--bg-deep);
-      box-shadow:0 10px 30px rgba(0,240,255,0.08), inset 0 0 30px rgba(138,76,255,0.04);
-      background:linear-gradient(90deg,var(--neon),var(--accent));
+    .nav-link:hover{
+      transform:translateY(-4px);
+      background:linear-gradient(90deg,var(--gold),var(--teal));
+      color:#04121f;
+      box-shadow:0 14px 40px rgba(0,180,170,0.09);
     }
 
-    .cta-large{
-      padding:11px 20px;border-radius:12px;font-weight:800;background:transparent;border:2px solid var(--neon);
-      color:var(--neon);text-decoration:none;transition:all .18s;
+    .nav-ctas{margin-left:auto;display:flex;gap:10px;align-items:center}
+    .btn-ghost{padding:11px 18px;border-radius:12px;border:2px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:700;text-decoration:none}
+    .btn-primary{
+      padding:12px 20px;border-radius:12px;background:linear-gradient(90deg,var(--gold),#f1b400);color:#04121f;font-weight:800;text-decoration:none;box-shadow:0 18px 48px rgba(255,215,0,0.08);
+      transition:transform .18s,box-shadow .18s;
     }
-    .cta-large:hover{background:var(--neon);color:var(--bg-deep);transform:translateY(-4px)}
+    .btn-primary:hover{transform:translateY(-4px);box-shadow:0 26px 66px rgba(255,215,0,0.18)}
 
-    /* main hero (compact) */
-    main{max-width:var(--max);margin:42px auto;padding:18px}
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
-    .hero-left{}
-    .hero-strap{color:var(--neon);font-weight:700;font-size:0.95rem;margin-bottom:12px}
-    .hero-head{font-size:2.25rem;line-height:1.03;color:linear-gradient; font-weight:800;margin-bottom:14px}
-    .hero-head .slide{display:inline-block;opacity:1;transition:opacity .45s, transform .45s}
-    .hero-sub{color:var(--muted);margin-bottom:18px;font-size:1rem}
+    /* wrapper & layout */
+    .wrap{max-width:var(--max-w);margin:0 auto;padding:22px}
 
-    .actions{display:flex;gap:12px;align-items:center;margin-top:8px}
-    .btn-solid{padding:12px 26px;border-radius:12px;background:linear-gradient(90deg,var(--neon),#00c5ff);color:#001220;font-weight:800;text-decoration:none;box-shadow:0 18px 50px rgba(0,240,255,0.08)}
-    .btn-outline{padding:10px 20px;border-radius:12px;border:2px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none;font-weight:700}
-    .micro-features{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+    /* HERO — larger layout */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:56px 0 40px;min-height:62vh}
+    .strap{color:var(--teal);font-weight:700;font-size:0.95rem;margin-bottom:12px}
+    .hero-head{font-size:2.6rem;line-height:1.03;color:transparent;background:linear-gradient(90deg,var(--gold),#fff,var(--teal));-webkit-background-clip:text;font-weight:800;margin-bottom:14px}
+    .hero-sub{color:#dfeef3;font-size:1.05rem;margin-bottom:18px;max-width:68ch}
+    .hero-actions{display:flex;gap:14px;align-items:center}
+    .btn-outline{padding:12px 22px;border-radius:12px;border:2px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none;font-weight:700}
 
-    /* request card (new look) */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .card h4{color:var(--accent);margin-bottom:8px}
-    .field{width:100%;padding:10px;border-radius:10px;border:none;background:rgba(255,255,255,0.02);color:var(--muted);margin-bottom:12px}
+    .info-row{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+    .pill{padding:10px 14px;border-radius:10px;background:rgba(255,255,255,0.03);font-weight:700;color:#e8f7f3}
 
-    /* footer */
-    footer{max-width:var(--max);margin:40px auto 60px;padding:18px;text-align:center;color:#93cfe8;font-size:0.95rem}
+    /* sidebar card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 18px 48px rgba(0,0,0,0.56)}
+    .card h3{color:var(--gold);margin-bottom:8px}
+    .card .field{width:100%;padding:10px;border-radius:10px;border:none;background:rgba(255,255,255,0.02);color:var(--muted);margin-bottom:12px}
+
+    /* ABOUT section */
+    section.about{margin-top:36px;padding:32px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .about .title{color:var(--teal);font-weight:800;margin-bottom:12px;font-size:1.25rem}
+    .about p{color:#e9f3f4;line-height:1.7}
+
+    /* OUR WORK preview (cards) */
+    .work-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .work-card{padding:18px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);transition:transform .18s}
+    .work-card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(0,0,0,0.5)}
+    .work-card h4{color:var(--gold);margin-bottom:10px}
+
+    /* PRICING preview */
+    .pricing-preview{display:flex;gap:16px;margin-top:22px;flex-wrap:wrap}
+    .plan-mini{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);width:220px}
+    .plan-mini .price{font-size:1.25rem;color:var(--teal);font-weight:800;margin:8px 0}
+
+    /* CONTACT CTA */
+    .cta-contact{margin-top:28px;padding:20px;border-radius:12px;background:linear-gradient(90deg, rgba(0,180,170,0.03), rgba(255,215,0,0.02));display:flex;justify-content:space-between;align-items:center}
+    .cta-contact .left p{margin:0;color:#e9f4f2}
+    .cta-contact .right a{display:inline-block;text-decoration:none;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--gold),var(--teal));color:#04121f;font-weight:800}
+
+    footer{margin-top:40px;padding:28px 0;color:#9fded6;text-align:center;font-size:0.95rem}
 
     /* responsive */
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr;gap:18px}
-      .hero-left .hero-head{font-size:1.6rem}
-      nav{display:flex;flex-wrap:wrap;justify-content:center}
-      .nav-wrap{padding:10px}
+    @media(max-width:1024px){
+      .hero{grid-template-columns:1fr;gap:22px}
+      .work-preview{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .nav-link{padding:10px 14px;font-size:1rem}
+      .work-preview{grid-template-columns:1fr}
+      .plan-mini{width:100%}
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="nav-wrap">
-      <div class="brand">
-        <img src="assets/logo-new.png" alt="LeadBridge">
-        <div class="title">LeadBridge</div>
-      </div>
+    <div class="nav-inner">
+      <div class="brand"><img src="assets/logo-new.png" alt="logo"><h1>LeadBridge</h1></div>
 
-      <nav>
-        <a class="menu-btn" href="index.html">Home</a>
-        <a class="menu-btn" href="ourwork.html">Our Work</a>
-        <a class="menu-btn" href="pricing.html">Pricing</a>
-        <a class="menu-btn" href="contact.html">Contact</a>
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="ourwork.html">Our Work</a>
+        <a class="nav-link" href="pricing.html">Pricing</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
 
-      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
-        <a class="cta-large" href="contact.html">Get Leads</a>
+      <div class="nav-ctas">
+        <a class="btn-ghost" href="pricing.html">Our Pricing</a>
+        <a class="btn-primary" href="contact.html">Get Leads</a>
       </div>
     </div>
   </header>
 
-  <main>
+  <main class="wrap">
+    <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <div class="hero-left">
-        <div class="hero-strap">Premium Lead Intelligence</div>
+      <div>
+        <div class="strap">Premium Lead Intelligence</div>
+        <h2 class="hero-head"><span id="rotator">Accelerate Your Growth with Smart B2B Leads</span></h2>
+        <p class="hero-sub">We deliver segmented, verified B2B & B2C contacts so your reps speak to real buyers — with faster pipeline velocity and higher conversion rates.</p>
 
-        <h1 class="hero-head">
-          <span class="slide" id="rotator">Accelerate Your Growth with Smart B2B Leads</span>
-        </h1>
-
-        <p class="hero-sub">High-quality verified contacts, segmented for rapid outreach. We combine human verification with smart signals so you contact the right buyer—fast.</p>
-
-        <div class="actions">
-          <a class="btn-solid" href="contact.html">Get Free Sample</a>
-          <a class="btn-outline" href="ourwork.html">See Our Process</a>
+        <div class="hero-actions">
+          <a class="btn-primary" href="contact.html">Request Free Sample</a>
+          <a class="btn-outline" href="#work">How We Work</a>
         </div>
 
-        <div class="micro-features" aria-hidden="true" style="margin-top:16px">
-          <span style="padding:8px 12px;background:rgba(0,240,255,0.04);border-radius:10px;color:var(--neon);font-weight:700">Verified</span>
-          <span style="padding:8px 12px;background:rgba(138,76,255,0.03);border-radius:10px;color:var(--accent);font-weight:700">Segmented</span>
-          <span style="padding:8px 12px;background:rgba(255,255,255,0.02);border-radius:10px;color:var(--muted);font-weight:700">CRM-ready</span>
+        <div class="info-row" aria-hidden="true">
+          <span class="pill">Verified</span>
+          <span class="pill">Segmented</span>
+          <span class="pill">CRM-ready</span>
         </div>
       </div>
 
-      <aside class="card" aria-label="Request test">
-        <h4>Request a Free Test</h4>
+      <aside class="card" aria-label="Request card">
+        <h3>Request Your Free Test</h3>
         <form onsubmit="event.preventDefault(); window.location='mailto:sales.leadbridge@gmail.com?subject=Free%20Lead%20Request';">
           <input class="field" type="text" placeholder="Full name" required />
           <input class="field" type="email" placeholder="Business email" required />
           <input class="field" type="text" placeholder="Company / Industry" />
-          <textarea class="field" rows="4" placeholder="What leads do you need?"></textarea>
-          <button class="btn-solid" type="submit" style="width:100%">Request Test</button>
+          <textarea class="field" rows="4" placeholder="Brief: target, cities, volume"></textarea>
+          <button class="btn-primary" type="submit" style="width:100%">Request Test</button>
         </form>
       </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="title">About LeadBridge</div>
+      <p>LeadBridge combines intelligent signals, multi-source collection and human validation to deliver lists that convert. We focus on accuracy, relevance and actionable data — not just quantity. Our clients book more demos and shorten sales cycles using our targeted lists and enrichment tags.</p>
+    </section>
+
+    <!-- OUR WORK PREVIEW -->
+    <section id="work" style="margin-top:26px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 style="color:var(--teal);margin:0">How We Work — Preview</h3>
+        <a href="ourwork.html" class="btn-outline" style="font-weight:800">See Full Process</a>
+      </div>
+
+      <div class="work-preview" style="margin-top:14px">
+        <div class="work-card"><h4>Discovery</h4><p>We define your ideal customer profile and campaign goals before any collection begins.</p></div>
+        <div class="work-card"><h4>Collection</h4><p>Multi-source harvesting from public registries, networks and business listings for breadth.</p></div>
+        <div class="work-card"><h4>Validation</h4><p>Human checks (email & phone) and enrichment reduce bounces and improve reply rates.</p></div>
+      </div>
+    </section>
+
+    <!-- PRICING PREVIEW -->
+    <section style="margin-top:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 style="color:var(--gold);margin:0">Pricing — Preview</h3>
+        <a href="pricing.html" class="btn-outline" style="font-weight:800">View Plans</a>
+      </div>
+
+      <div class="pricing-preview">
+        <div class="plan-mini"><div style="font-weight:800">Starter</div><div class="price">$89 / mo</div><div style="color:#dfe7ea">Up to 250 verified leads<br/>CSV export</div></div>
+        <div class="plan-mini" style="background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.03));box-shadow:0 12px 36px rgba(138,76,255,0.06)"><div style="font-weight:800">Professional</div><div class="price">$169 / mo</div><div style="color:#dfe7ea">800+ leads, enrichment, segments</div></div>
+        <div class="plan-mini"><div style="font-weight:800">Enterprise</div><div class="price">Custom</div><div style="color:#dfe7ea">API & CRM integration, scale delivery</div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section style="margin-top:32px">
+      <div class="cta-contact">
+        <div class="left">
+          <strong style="color:var(--gold)">Ready to scale outreach?</strong>
+          <p style="margin-top:6px;color:#e7f3f2">Request a free sample list and we'll prepare a short demo relevant to your ICP.</p>
+        </div>
+        <div class="right">
+          <a href="contact.html">Request Sample</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2025 LeadBridge — Premium B2B Lead Solutions • <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--neon);text-decoration:none">sales.leadbridge@gmail.com</a>
+    © 2025 LeadBridge • <span style="color:var(--teal)">sales@leadbridge.com</span> • Verified B2B & B2C leads
   </footer>
 
   <script>
-    // rotating 3 lines (fade + rise)
+    // rotating 3 lines (fade + up)
     (function(){
       const lines = [
         "Accelerate Your Growth with Smart B2B Leads",
@@ -160,21 +226,21 @@
       ];
       const el = document.getElementById('rotator');
       let i = 0;
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(prefersReduced){ el.textContent = lines[0]; return; }
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce){ el.textContent = lines[0]; return; }
       setInterval(()=>{
         el.style.opacity = 0;
-        el.style.transform = 'translateY(-8px)';
+        el.style.transform = 'translateY(-10px)';
         setTimeout(()=>{
           i = (i+1) % lines.length;
           el.textContent = lines[i];
           el.style.opacity = 1;
           el.style.transform = 'translateY(0)';
-        }, 420);
-      }, 3200);
+        },420);
+      },3200);
     })();
 
-    // subtle parallax feel (background moves on scroll)
+    // parallax background subtle move
     (function(){
       const speed = 0.28;
       window.addEventListener('scroll', () => {
