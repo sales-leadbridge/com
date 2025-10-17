@@ -4,76 +4,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LeadBridge — Pricing</title>
+  <title>LeadBridge — Pricing Plans</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    :root{--accent:#9B59FF;--bg:linear-gradient(120deg,#05122a 0%,#1a0033 70%)}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Poppins',sans-serif;color:#efeaff;background:var(--bg);min-height:100vh}
-    body::before{content:"";position:fixed;inset:0;background:rgba(2,6,12,0.7);backdrop-filter:blur(6px);z-index:-1}
-    nav{display:flex;justify-content:space-between;padding:18px 6%;position:sticky;top:0;background:rgba(0,0,0,0.12);z-index:20}
-    .logo{font-weight:700;color:#fff}
-    .plans{max-width:1100px;margin:70px auto;padding:30px;border-radius:12px;background:rgba(255,255,255,0.03)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .plan{padding:26px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));text-align:left}
-    .tag{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#6ee7b7);color:#041029;font-weight:700;margin-bottom:14px}
-    .price{font-size:2rem;font-weight:800;margin:8px 0;color:#fff}
-    ul{margin:14px 0;color:#e8dcff;line-height:1.8}
-    .choose{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
-    @media(max-width:900px){.grid{grid-template-columns:1fr;padding:12px}}
-    footer{padding:22px 6%;text-align:center;color:#e7dbff}
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="logo">LeadBridge</div>
-    <div>
-      <a href="index.html" style="color:#fff;margin-right:18px;text-decoration:none">Home</a>
-      <a href="ourwork.html" style="color:#fff;margin-right:18px;text-decoration:none">Our Work</a>
-      <a href="contact.html" style="color:#fff;text-decoration:none">Contact</a>
-    </div>
-  </nav>
 
-  <main class="plans">
-    <h1 style="color:var(--accent)">Pricing Plans</h1>
-    <p style="color:#e8e0ff;max-width:900px">Simple, transparent packages built to scale with your business. Every plan includes verified contacts, weekly refresh, and CSV/CRM delivery.</p>
+    :root {
+      --accent: #ff3b3b;
+      --header-bg: linear-gradient(120deg, #02132b 0%, #03224a 100%);
+      --overlay: linear-gradient(115deg, rgba(0,15,35,0.85), rgba(0,0,0,0.75));
+    }
 
-    <div class="grid" style="margin-top:20px">
-      <div class="plan">
-        <div class="tag">Starter</div>
-        <div class="price">$99 / month</div>
-        <ul>
-          <li>Up to 300 verified leads</li>
-          <li>Basic targeting (city/industry)</li>
-          <li>CSV export & weekly updates</li>
-        </ul>
-        <a class="choose" href="contact.html">Choose Starter</a>
-      </div>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-      <div class="plan" style="box-shadow:0 10px 40px rgba(155,89,255,0.12)">
-        <div class="tag">Professional</div>
-        <div class="price">$199 / month</div>
-        <ul>
-          <li>800+ verified leads</li>
-          <li>Advanced targeting & filters</li>
-          <li>Segmented lists + enrichment</li>
-        </ul>
-        <a class="choose" href="contact.html">Choose Professional</a>
-      </div>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #f5f7ff;
+      min-height: 100vh;
+      background: var(--overlay),
+        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80')
+        no-repeat center center/cover;
+      background-attachment: fixed;
+      backdrop-filter: blur(3px);
+    }
 
-      <div class="plan">
-        <div class="tag">Enterprise</div>
-        <div class="price">Custom</div>
-        <ul>
-          <li>Large-scale targeting</li>
-          <li>API/CRM integration</li>
-          <li>Dedicated account manager</li>
-        </ul>
-        <a class="choose" href="contact.html">Request Quote</a>
-      </div>
-    </div>
-  </main>
+    /* Header */
+    header {
+      background: var(--header-bg);
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
 
-  <footer>© 2025 LeadBridge • Tailored plans for measurable lead growth • <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--accent)">sales.leadbridge@gmail.com</a></footer>
-</body>
-</html>
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Plans Section */
+    main {
+      max-width: 1100px;
+      margin: 70px auto;
+      padding: 40px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    p.intro {
+      color: #d6e2ff;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .plan {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 30px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .plan:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 8px 0;
+      color: #fff;
+    }
+
+    ul {
+      list-style: none;
+      margin: 14px 0;
+      color: #e0ecf5;
+      line-height: 1.8;
+    }
+
+    .choose {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 10px;
+      tex
