@@ -9,7 +9,7 @@
 
     :root {
       --accent: #00b4ff;
-      --accent2: #ff8a00;
+      --accent2: #1ee0ff;
       --text-light: #f7faff;
       --bg-dark: #071322;
     }
@@ -18,24 +18,31 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--text-light);
-      background: radial-gradient(circle at 20% 20%, #0c1a2e, #030b17 70%);
+      background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=2000&q=80') center/cover fixed no-repeat;
       min-height: 100vh;
+      position: relative;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(0,180,255,0.15), rgba(0,0,0,0.8) 70%);
+      backdrop-filter: blur(4px);
+      z-index: -1;
     }
 
     /* Navbar */
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 18px 6%;
-      background: rgba(5, 10, 20, 0.75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 0 25px rgba(0, 180, 255, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 25px rgba(0, 180, 255, 0.15);
     }
 
     .logo-container {
@@ -45,33 +52,55 @@
     }
 
     .logo-container img {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
     }
 
     .logo-text {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--accent2);
+      letter-spacing: 1px;
     }
 
     .nav-links {
       display: flex;
-      gap: 35px;
-      align-items: center;
+      flex: 1;
+      justify-content: center;
+      gap: 50px;
     }
 
     .nav-links a {
+      position: relative;
       color: #e5f3ff;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.05rem;
-      transition: 0.3s;
+      transition: color 0.3s ease;
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent2);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent2);
+      text-shadow: 0 0 8px rgba(30,224,255,0.8);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
     .cta {
       background: linear-gradient(145deg, var(--accent), var(--accent2));
@@ -95,23 +124,7 @@
       align-items: center;
       gap: 60px;
       padding: 110px 6%;
-      background: url('https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(5,10,25,0.7);
-      backdrop-filter: blur(6px);
-      z-index: 0;
-    }
-
-    .hero-left, .hero-right {
-      position: relative;
-      z-index: 1;
+      min-height: 80vh;
     }
 
     .hero-left {
@@ -120,24 +133,24 @@
     }
 
     .hero-left h1 {
-      font-size: 3.2rem;
+      font-size: 3.4rem;
       font-weight: 700;
-      margin-bottom: 22px;
-      line-height: 1.15;
-      background: linear-gradient(90deg, #fff, var(--accent));
+      margin-bottom: 20px;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #fff, var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-left p {
-      max-width: 580px;
+      max-width: 600px;
       font-size: 1.2rem;
       line-height: 1.7;
       color: #cfeaff;
       margin-bottom: 35px;
     }
 
-    .btn {
+    .hero-left .btn {
       display: inline-block;
       background: linear-gradient(145deg, var(--accent), var(--accent2));
       color: #03121d;
@@ -150,31 +163,33 @@
       transition: all 0.25s ease;
     }
 
-    .btn:hover {
+    .hero-left .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,180,255,0.6);
+      box-shadow: 0 8px 22px rgba(0,180,255,0.6);
     }
 
-    #rotating-heading { transition: opacity 0.6s ease-in-out; }
+    /* Rotating Headings */
+    #rotating-heading {
+      transition: opacity 0.6s ease-in-out;
+    }
     .fade-out { opacity: 0; }
 
     /* Form Box */
     .hero-right {
-      flex: 1.05;
+      flex: 1.1;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 18px;
       padding: 45px;
-      box-shadow: 0 0 35px rgba(0, 180, 255, 0.25);
-      backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(0, 180, 255, 0.2);
+      backdrop-filter: blur(10px);
       animation: fadeIn 1.2s ease both;
     }
 
     .hero-right h2 {
       font-size: 1.8rem;
-      color: var(--accent);
-      margin-bottom: 25px;
+      color: var(--accent2);
+      margin-bottom: 20px;
       text-align: center;
-      letter-spacing: 0.5px;
     }
 
     input, textarea {
@@ -189,7 +204,7 @@
       outline: none;
     }
 
-    input::placeholder, textarea::placeholder { color: #b9d8ff; }
+    input::placeholder, textarea::placeholder { color: #cfeaff; }
 
     .submit-btn {
       width: 100%;
@@ -216,15 +231,13 @@
       color: #cfeaff;
       font-size: 0.95rem;
       background: rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
     @media (max-width: 950px) {
       .hero { flex-direction: column; text-align: center; padding: 90px 6%; }
       .hero-right { width: 100%; }
-      .hero-left h1 { font-size: 2.4rem; }
-      .logo-text { font-size: 1.5rem; }
-      .logo-container img { width: 40px; height: 40px; }
+      .hero-left h1 { font-size: 2.5rem; }
     }
 
     @keyframes slideIn {
@@ -244,19 +257,21 @@
       <img src="assets/logo.png" alt="LeadBridge Logo" />
       <div class="logo-text">LeadBridge</div>
     </div>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="ourwork.html">Our Work</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
-      <a class="cta" href="contact.html">Get Leads</a>
     </div>
+
+    <a class="cta" href="contact.html">Get Leads</a>
   </nav>
 
   <section class="hero">
     <div class="hero-left">
       <h1 id="rotating-heading">Boost Your Sales with Real Business Leads</h1>
-      <p>We deliver verified, high-quality B2B and B2C data that helps you connect with real buyers, make confident decisions, and grow faster.</p>
+      <p>We provide verified B2B and B2C leads tailored to your business goals. Save time, close faster, and grow your sales pipeline with high-converting data.</p>
       <a href="contact.html" class="btn">Get Free Sample</a>
     </div>
 
@@ -277,8 +292,8 @@
   <script>
     const headings = [
       "Boost Your Sales with Real Business Leads",
-      "Grow Faster with Verified B2B Data",
-      "Fuel Your Pipeline with Quality Prospects"
+      "Grow Faster with Targeted Marketing Data",
+      "Fuel Your Pipeline with Verified Prospects"
     ];
 
     let i = 0;
