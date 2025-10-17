@@ -8,18 +8,17 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
     :root {
-      --accent-blue: #007bff;
-      --accent-red: #ff3b3b;
+      --accent: #ff2d55;
+      --accent2: #00b4ff;
       --text-light: #f7faff;
-      --bg-dark: #04101f;
+      --bg-dark: #04101e;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--text-light);
-      background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=80') center/cover fixed no-repeat;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=80') center/cover fixed no-repeat;
       min-height: 100vh;
       position: relative;
       overflow-x: hidden;
@@ -29,9 +28,9 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6) backdrop-filter(blur(6px));
+      background: linear-gradient(115deg, rgba(0,15,35,0.88), rgba(0,0,0,0.75));
+      backdrop-filter: blur(3px);
       z-index: -1;
-      backdrop-filter: blur(4px);
     }
 
     /* Navbar */
@@ -39,78 +38,71 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 6%;
-      background: linear-gradient(90deg, #002b5c, #00172f);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      padding: 22px 6%;
+      background: linear-gradient(90deg, rgba(0,20,60,0.85), rgba(0,0,0,0.85));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 700;
-      color: #00c8ff;
-      letter-spacing: 1px;
+      color: white;
     }
-
     .logo img {
-      height: 38px;
-      width: auto;
-      border-radius: 6px;
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
     }
 
     .nav-links {
       display: flex;
-      gap: 15px;
-      align-items: center;
+      gap: 35px;
     }
 
     .nav-links a {
+      color: #e6f3ff;
       text-decoration: none;
-      color: #f1f5ff;
-      padding: 10px 20px;
       font-weight: 600;
-      font-size: 1rem;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.05);
-      transition: all 0.25s ease;
-      border: 1px solid transparent;
+      font-size: 1.1rem;
+      position: relative;
+      transition: all 0.3s ease;
+      padding: 10px 18px;
+      border-radius: 10px;
     }
 
     .nav-links a:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--accent-red);
-      color: var(--accent-red);
+      background: linear-gradient(145deg, #ff2d55, #00b4ff);
+      color: #04101e;
+      box-shadow: 0 4px 15px rgba(255,45,85,0.5);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255,59,59,0.4);
     }
 
     .cta {
-      background: linear-gradient(145deg, #00b4ff, #007bff);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 10px;
+      background: linear-gradient(145deg, var(--accent), var(--accent2));
+      color: #04101e;
+      padding: 14px 26px;
+      border-radius: 12px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,180,255,0.5);
+      box-shadow: 0 4px 12px rgba(255,45,85,0.4);
       transition: all 0.25s ease;
     }
-
     .cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,180,255,0.7);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255,45,85,0.6);
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 60px;
-      padding: 100px 6%;
+      padding: 120px 6%;
       min-height: 80vh;
     }
 
@@ -124,7 +116,7 @@
       font-weight: 700;
       margin-bottom: 20px;
       line-height: 1.1;
-      background: linear-gradient(90deg, #fff, #00c8ff);
+      background: linear-gradient(90deg, #fff, var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -133,27 +125,33 @@
       max-width: 600px;
       font-size: 1.2rem;
       line-height: 1.7;
-      color: #d7eaff;
+      color: #cfeaff;
       margin-bottom: 35px;
     }
 
     .hero-left .btn {
       display: inline-block;
-      background: linear-gradient(145deg, #00b4ff, #007bff);
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 12px;
+      background: linear-gradient(145deg, var(--accent), var(--accent2));
+      color: #03121d;
+      padding: 16px 40px;
+      border-radius: 14px;
       font-weight: 700;
       font-size: 1.1rem;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,180,255,0.3);
+      box-shadow: 0 4px 10px rgba(255,45,85,0.3);
       transition: all 0.25s ease;
     }
 
     .hero-left .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 22px rgba(0,180,255,0.6);
+      box-shadow: 0 8px 22px rgba(255,45,85,0.6);
     }
+
+    /* Rotating Headings */
+    #rotating-heading {
+      transition: opacity 0.6s ease-in-out;
+    }
+    .fade-out { opacity: 0; }
 
     /* Form Box */
     .hero-right {
@@ -168,7 +166,7 @@
 
     .hero-right h2 {
       font-size: 1.8rem;
-      color: #00c8ff;
+      color: var(--accent2);
       margin-bottom: 20px;
       text-align: center;
     }
@@ -192,8 +190,8 @@
       padding: 15px;
       border: none;
       border-radius: 12px;
-      background: linear-gradient(145deg, #00b4ff, #007bff);
-      color: #fff;
+      background: linear-gradient(145deg, var(--accent), var(--accent2));
+      color: #04121f;
       font-weight: 700;
       cursor: pointer;
       font-size: 1.05rem;
@@ -204,30 +202,6 @@
     .submit-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(0,180,255,0.6);
-    }
-
-    /* Extra Button Below Header */
-    .below-header {
-      text-align: right;
-      margin-right: 6%;
-      margin-top: 10px;
-    }
-
-    .below-header a {
-      display: inline-block;
-      background: linear-gradient(145deg, #007bff, #0040a0);
-      color: #fff;
-      padding: 12px 28px;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,180,255,0.5);
-      transition: all 0.25s ease;
-    }
-
-    .below-header a:hover {
-      background: linear-gradient(145deg, #ff3b3b, #b30000);
-      box-shadow: 0 8px 22px rgba(255,59,59,0.6);
     }
 
     footer {
@@ -259,7 +233,7 @@
 <body>
   <nav>
     <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2022.png" alt="LeadBridge Logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_Lead.png/800px-Logo_Lead.png" alt="Logo" />
       LeadBridge
     </div>
     <div class="nav-links">
@@ -271,13 +245,9 @@
     </div>
   </nav>
 
-  <div class="below-header">
-    <a href="pricing.html">Our Pricing</a>
-  </div>
-
   <section class="hero">
     <div class="hero-left">
-      <h1 id="rotating-heading">Grow Faster with Targeted Marketing Data</h1>
+      <h1 id="rotating-heading">Boost Your Sales with Real Business Leads</h1>
       <p>We provide verified B2B and B2C leads tailored to your business goals. Save time, close faster, and grow your sales pipeline with high-converting data.</p>
       <a href="contact.html" class="btn">Get Free Sample</a>
     </div>
