@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LeadBridge - Premium Business Leads</title>
+  <title>LeadBridge - Verified Business Leads</title>
   <style>
     * {
       margin: 0;
@@ -14,8 +14,8 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      color: #fff;
-      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      color: #e8ecf7;
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
     }
 
@@ -26,58 +26,58 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 15, 40, 0.88);
+      background: rgba(0, 10, 25, 0.85);
       z-index: -1;
     }
 
     header {
       text-align: center;
-      padding: 120px 20px 60px;
+      padding: 120px 20px 70px;
+      background: linear-gradient(180deg, rgba(0,30,60,0.7), rgba(0,0,0,0));
     }
 
     header h1 {
-      font-size: 3.5em;
-      color: gold;
+      font-size: 3.8em;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, gold, #00aaff);
+      background: linear-gradient(90deg, #FFD700, #00C3FF);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: fadeIn 1.5s ease-in-out;
+      margin-bottom: 15px;
+      letter-spacing: 1.5px;
     }
 
     header p {
       font-size: 1.3em;
-      color: #b3d4fc;
-      margin-top: 10px;
-      animation: fadeIn 2s ease-in-out;
+      color: #b0d4ff;
+      text-shadow: 0 0 10px rgba(0, 153, 255, 0.4);
     }
 
     nav {
-      background: rgba(0, 25, 80, 0.9);
+      background: rgba(0, 25, 70, 0.95);
       display: flex;
       justify-content: center;
       gap: 60px;
       padding: 18px 0;
-      border-top: 2px solid gold;
-      border-bottom: 2px solid gold;
+      border-top: 2px solid #FFD700;
+      border-bottom: 2px solid #FFD700;
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     nav a {
-      color: gold;
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
       font-size: 18px;
       transition: 0.3s;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     }
 
     nav a:hover {
-      color: #66a3ff;
-      transform: scale(1.1);
+      color: #FFD700;
+      transform: scale(1.08);
     }
 
     section {
@@ -85,27 +85,30 @@
       padding: 100px 25px;
       max-width: 1100px;
       margin: 80px auto;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 15px;
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
-      backdrop-filter: blur(3px);
-      animation: fadeUp 1.2s ease-in-out;
+      backdrop-filter: blur(4px);
+      transition: all 0.4s ease-in-out;
+    }
+
+    section:hover {
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+      transform: scale(1.01);
     }
 
     section h2 {
-      color: #000;
-      background: linear-gradient(90deg, gold, #0044cc);
       font-size: 2.4em;
       font-weight: 700;
       margin-bottom: 25px;
+      background: linear-gradient(90deg, #FFD700, #00A8FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-transform: uppercase;
-      display: inline-block;
-      padding: 8px 25px;
-      border-radius: 6px;
     }
 
     section p {
-      color: #f5f5f5;
+      color: #e4eaf7;
       font-size: 18px;
       line-height: 1.9;
       margin-bottom: 35px;
@@ -113,19 +116,19 @@
 
     .btn {
       display: inline-block;
-      background: linear-gradient(90deg, gold, #0044cc);
+      background: linear-gradient(90deg, #FFD700, #0055FF);
       color: #000;
-      padding: 14px 30px;
+      padding: 14px 32px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
       font-size: 17px;
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
     }
 
     .btn:hover {
-      background: linear-gradient(90deg, #0044cc, gold);
+      background: linear-gradient(90deg, #0055FF, #FFD700);
       transform: scale(1.07);
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
     }
@@ -135,28 +138,18 @@
       color: #ccc;
       text-align: center;
       padding: 30px 0;
-      border-top: 2px solid gold;
-      margin-top: 60px;
+      border-top: 2px solid #FFD700;
+      margin-top: 80px;
       font-size: 15px;
     }
 
     footer span {
-      color: gold;
+      color: #FFD700;
       font-weight: 600;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes fadeUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
     @media (max-width: 768px) {
-      header h1 { font-size: 2.3em; }
+      header h1 { font-size: 2.5em; }
       nav { flex-wrap: wrap; gap: 25px; }
       section { padding: 60px 15px; }
       section h2 { font-size: 1.8em; }
@@ -167,7 +160,7 @@
 <body>
   <header>
     <h1>Welcome to LeadBridge</h1>
-    <p>Empowering Businesses with Real, Targeted & Verified Leads</p>
+    <p>Delivering Verified, Targeted & Profitable Business Leads</p>
   </header>
 
   <nav>
@@ -179,29 +172,36 @@
 
   <section id="home">
     <h2>Home</h2>
-    <p>At <b>LeadBridge</b>, we believe in helping companies grow faster by providing high-quality, verified business leads. Whether you are a startup or an established brand, our data-driven approach helps you connect with genuine buyers and clients who are ready to engage. <br><br> We specialize in delivering targeted leads for industries like real estate, construction, B2B services, and more — so you can focus on closing deals instead of chasing prospects.</p>
+    <p><b>LeadBridge</b> connects you directly with your next potential client.  
+    We specialize in delivering highly targeted, verified leads across industries including real estate, construction, and B2B.  
+    Our data is curated using AI-powered filters and human verification, ensuring every lead is 100% real and ready to convert.</p>
     <a href="#contact" class="btn">Get Leads Now</a>
   </section>
 
   <section id="work">
     <h2>Our Work</h2>
-    <p>We don’t just collect data — we build opportunities. Our expert research team uses advanced tools, AI algorithms, and manual verification to ensure every lead is authentic, updated, and industry-relevant. <br><br> From gathering potential clients to verifying contact details, we handle it all. Our mission is simple: to bridge the gap between your services and your ideal customers with unmatched accuracy and trust.</p>
-    <a href="#pricing" class="btn">View Results</a>
+    <p>We don’t just find names — we deliver opportunities.  
+    Our lead generation process combines technology, data mining, and marketing insights to identify genuine buyers and business partners for you.  
+    <br><br>Every lead is checked for accuracy, updated regularly, and customized to your niche so you can focus on growing your revenue, not your spreadsheet.</p>
+    <a href="#pricing" class="btn">See Results</a>
   </section>
 
   <section id="pricing">
     <h2>Pricing</h2>
-    <p>We offer flexible pricing tailored to your business goals:</p>
-    <p><b>Starter Plan:</b> $99/month – Up to 300 verified leads<br>
-       <b>Professional Plan:</b> $199/month – 800+ verified leads<br>
-       <b>Enterprise Plan:</b> Custom pricing with advanced targeting</p>
-    <p>All plans include weekly updates, verified email lists, and lead segmentation reports for maximum ROI.</p>
-    <a href="#contact" class="btn">Request Custom Quote</a>
+    <p>Our plans are built for every scale of business:</p>
+    <p>
+      <b>Starter:</b> $99/month – Up to 300 verified leads<br>
+      <b>Professional:</b> $199/month – 800+ verified leads<br>
+      <b>Enterprise:</b> Custom plan for large-scale targeting
+    </p>
+    <p>Each package includes regular updates, lead validation reports, and customer segmentation insights.</p>
+    <a href="#contact" class="btn">Get Custom Quote</a>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Let’s talk about how LeadBridge can fuel your business growth. Contact us for lead samples, pricing, or any custom requirements.</p>
+    <p>We’re ready to power your business with accurate, high-converting leads.  
+    Reach out to discuss your requirements or request a free demo list.</p>
     <p><b>Email:</b> sales.leadbridge@gmail.com</p>
     <p><b>Phone:</b> +92-XXX-XXXXXXX</p>
     <p><b>Website:</b> sales.leadbridge.github.io</p>
