@@ -1,0 +1,59 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeadBridge — Contact</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    :root{--accent:#2ECC71;--bg:linear-gradient(120deg,#042017 0%, #00332a 70%)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;color:#e8fff0;background:var(--bg);min-height:100vh}
+    body::before{content:"";position:fixed;inset:0;background:rgba(0,6,6,0.6);backdrop-filter:blur(6px);z-index:-1}
+    nav{display:flex;justify-content:space-between;padding:18px 6%;position:sticky;top:0;background:rgba(0,0,0,0.12);z-index:20}
+    .logo{font-weight:700}
+    .container{max-width:1000px;margin:60px auto;padding:24px;background:rgba(255,255,255,0.03);border-radius:12px}
+    .two{display:flex;gap:24px}
+    .left,.right{flex:1;padding:18px}
+    h1{color:var(--accent);margin-bottom:10px}
+    p{color:#dfffe8;line-height:1.8}
+    input,textarea{width:100%;padding:12px;border-radius:8px;border:none;background:rgba(255,255,255,0.02);color:#eaffef;margin-bottom:12px}
+    .btn{background:var(--accent);color:#033;display:inline-block;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700}
+    @media(max-width:880px){.two{flex-direction:column}}
+    footer{padding:18px;text-align:center;color:#cdeed6}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">LeadBridge</div>
+    <div><a href="index.html" style="color:#fff;text-decoration:none;margin-right:14px">Home</a><a href="pricing.html" style="color:#fff;text-decoration:none">Pricing</a></div>
+  </nav>
+
+  <main class="container">
+    <div class="two">
+      <div class="left">
+        <h1>Contact Us</h1>
+        <p>Ready to receive high-converting leads? Tell us your target industry, location, and monthly budget — we’ll prepare a free demo list tailored to your needs.</p>
+        <p><strong>Email:</strong> <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--accent)">sales.leadbridge@gmail.com</a></p>
+        <p><strong>Phone:</strong> +92-XXX-XXXXXXX</p>
+        <p><strong>Address:</strong> Room 112, 207 Greenway Plaza, Houston, TX</p>
+        <p><strong>Business Hours:</strong> Mon-Fri 9:00 - 18:00 (CST)</p>
+      </div>
+
+      <div class="right">
+        <h2 style="color:#fff;margin-bottom:10px">Send a Message</h2>
+        <form onsubmit="event.preventDefault(); window.location='mailto:sales.leadbridge@gmail.com?subject=LeadBridge%20Contact%20Request';">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="company" placeholder="Company / Industry" />
+          <textarea name="message" placeholder="Write your requirements (location, quantity, budget)"></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2025 LeadBridge • We connect you with buyers that convert • <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--accent)">sales.leadbridge@gmail.com</a></footer>
+</body>
+</html>
