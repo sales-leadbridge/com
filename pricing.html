@@ -1,0 +1,79 @@
+<!-- pricing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeadBridge — Pricing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    :root{--accent:#9B59FF;--bg:linear-gradient(120deg,#05122a 0%,#1a0033 70%)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;color:#efeaff;background:var(--bg);min-height:100vh}
+    body::before{content:"";position:fixed;inset:0;background:rgba(2,6,12,0.7);backdrop-filter:blur(6px);z-index:-1}
+    nav{display:flex;justify-content:space-between;padding:18px 6%;position:sticky;top:0;background:rgba(0,0,0,0.12);z-index:20}
+    .logo{font-weight:700;color:#fff}
+    .plans{max-width:1100px;margin:70px auto;padding:30px;border-radius:12px;background:rgba(255,255,255,0.03)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .plan{padding:26px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));text-align:left}
+    .tag{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#6ee7b7);color:#041029;font-weight:700;margin-bottom:14px}
+    .price{font-size:2rem;font-weight:800;margin:8px 0;color:#fff}
+    ul{margin:14px 0;color:#e8dcff;line-height:1.8}
+    .choose{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;padding:12px}}
+    footer{padding:22px 6%;text-align:center;color:#e7dbff}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">LeadBridge</div>
+    <div>
+      <a href="index.html" style="color:#fff;margin-right:18px;text-decoration:none">Home</a>
+      <a href="ourwork.html" style="color:#fff;margin-right:18px;text-decoration:none">Our Work</a>
+      <a href="contact.html" style="color:#fff;text-decoration:none">Contact</a>
+    </div>
+  </nav>
+
+  <main class="plans">
+    <h1 style="color:var(--accent)">Pricing Plans</h1>
+    <p style="color:#e8e0ff;max-width:900px">Simple, transparent packages built to scale with your business. Every plan includes verified contacts, weekly refresh, and CSV/CRM delivery.</p>
+
+    <div class="grid" style="margin-top:20px">
+      <div class="plan">
+        <div class="tag">Starter</div>
+        <div class="price">$99 / month</div>
+        <ul>
+          <li>Up to 300 verified leads</li>
+          <li>Basic targeting (city/industry)</li>
+          <li>CSV export & weekly updates</li>
+        </ul>
+        <a class="choose" href="contact.html">Choose Starter</a>
+      </div>
+
+      <div class="plan" style="box-shadow:0 10px 40px rgba(155,89,255,0.12)">
+        <div class="tag">Professional</div>
+        <div class="price">$199 / month</div>
+        <ul>
+          <li>800+ verified leads</li>
+          <li>Advanced targeting & filters</li>
+          <li>Segmented lists + enrichment</li>
+        </ul>
+        <a class="choose" href="contact.html">Choose Professional</a>
+      </div>
+
+      <div class="plan">
+        <div class="tag">Enterprise</div>
+        <div class="price">Custom</div>
+        <ul>
+          <li>Large-scale targeting</li>
+          <li>API/CRM integration</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a class="choose" href="contact.html">Request Quote</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2025 LeadBridge • Tailored plans for measurable lead growth • <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--accent)">sales.leadbridge@gmail.com</a></footer>
+</body>
+</html>
