@@ -3,90 +3,69 @@
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LeadBridge — Our Work</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="LeadBridge process: Discovery, Collection, Validation, Enrichment, Delivery." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#020416;--neon:#00f0ff;--vio:#8a4cff;--muted:#b6d6e6;--panel:rgba(255,255,255,0.02);--max:900px}
+    :root{--teal:#00b4a6;--gold:#FFD700;--muted:#EAEAEA;--panel:rgba(255,255,255,0.02);--max-w:1035px;--nav-size:1.35rem}
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto}
-    body{color:var(--muted);background:url('assets/bg2.jpg') center top / cover no-repeat fixed}
-    body::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg, rgba(2,8,20,0.68), rgba(0,0,0,0.7));z-index:-1}
-    header{position:sticky;top:0;background:rgba(3,8,20,0.6);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.02)}
-    .nav{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center}
-    .brand img{width:42px;height:42px;border-radius:8px}
-    nav a{padding:12px 20px;border-radius:10px;background:var(--panel);text-decoration:none;color:var(--muted);font-weight:600;margin-left:8px;transition:.18s}
-    nav a:hover{background:linear-gradient(90deg,var(--vio),var(--neon));color:#04121f;transform:translateY(-3px)}
-    main{max-width:var(--max);margin:48px auto;padding:22px;background:rgba(255,255,255,0.02);border-radius:12px}
-    h1{color:var(--neon);font-size:1.5rem;margin-bottom:8px}
-    p.lead{color:#cfeeff;margin-bottom:18px}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .step{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .2s}
-    .step:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.5)}
-    .step h3{color:var(--vio);margin-bottom:8px}
-    .step p{color:var(--muted);font-size:0.95rem;line-height:1.6}
-    @media(max-width:920px){.steps{grid-template-columns:1fr}}
-    footer{max-width:var(--max);margin:40px auto;padding:18px;text-align:center;color:#93cfe8}
+    html,body{height:100%;font-family:'Poppins',system-ui,-apple-system}
+    body{color:var(--muted);background:url('assets/ourwork.jpg') center top / cover no-repeat fixed}
+    body::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg, rgba(1,8,16,0.64), rgba(2,6,12,0.72));z-index:-2}
+    body::after{content:"";position:fixed;inset:0;backdrop-filter: blur(6px);z-index:-1}
+    header{position:sticky;top:0;background:rgba(1,8,16,0.56);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.02)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;padding:14px 18px;gap:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:46px;height:46px;border-radius:10px}
+    nav{display:flex;gap:12px;margin-left:22px}
+    .nav-link{padding:13px 24px;border-radius:12px;background:var(--panel);color:var(--muted);text-decoration:none;font-weight:700;font-size:var(--nav-size)}
+    .nav-link:hover{background:linear-gradient(90deg,var(--gold),var(--teal));color:#04121f;transform:translateY(-4px)}
+    main{max-width:var(--max-w);margin:48px auto;padding:26px;background:rgba(255,255,255,0.02);border-radius:12px}
+    h1{color:var(--teal);font-size:1.6rem;margin-bottom:8px}
+    p.lead{color:#e6f6f4;margin-bottom:20px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .step{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .18s}
+    .step:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.55)}
+    .step h3{color:var(--gold);margin-bottom:8px}
+    .step p{color:var(--muted);line-height:1.6}
+    footer{max-width:var(--max-w);margin:40px auto;padding:18px;text-align:center;color:#9fded6}
+    @media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header>
-    <div class="nav">
-      <div class="brand"><img src="assets/logo-new.png" alt=""><strong style="color:var(--neon)">LeadBridge</strong></div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="ourwork.html">Our Work</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="contact.html">Contact</a>
+    <div class="nav-inner">
+      <div class="brand"><img src="assets/logo-new.png" alt="logo"><strong style="color:var(--teal)">LeadBridge</strong></div>
+      <nav aria-label="Site Nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="ourwork.html">Our Work</a>
+        <a class="nav-link" href="pricing.html">Pricing</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
+      <div style="margin-left:auto"><a class="nav-link" href="contact.html" style="background:linear-gradient(90deg,var(--teal),#00e0c2);color:#04121f;padding:12px 18px">Get Leads</a></div>
     </div>
   </header>
 
   <main>
-    <h1>What We Do — The LeadBridge Process</h1>
-    <p class="lead">A blend of automation and human verification — we find, verify, and deliver leads that help you book meetings.</p>
+    <h1>Our Process — How LeadBridge Works</h1>
+    <p class="lead">A clear, repeatable process that balances scale and quality: we target, collect, verify, enrich and deliver leads that your reps can act on immediately.</p>
 
-    <div class="steps" role="list">
-      <div class="step" role="listitem">
-        <h3>Discovery & ICP</h3>
-        <p>We build an exact profile of your ideal buyer — industry, size, decision-maker role, and intent signals.</p>
-      </div>
-
-      <div class="step" role="listitem">
-        <h3>Data Aggregation</h3>
-        <p>Multi-source collection from professional networks, registries, and web signals to maximize coverage.</p>
-      </div>
-
-      <div class="step" role="listitem">
-        <h3>Human Validation</h3>
-        <p>Phone and email checks performed by our team — we remove silent and invalid contacts before delivery.</p>
-      </div>
-
-      <div class="step" role="listitem">
-        <h3>Enrichment & Tagging</h3>
-        <p>We enrich records with role, company size, and other tags that let your reps personalize outreach.</p>
-      </div>
-
-      <div class="step" role="listitem">
-        <h3>Delivery Formats</h3>
-        <p>CSV, Sheets, or CRM-ready files with campaign-ready columns and segmentation tags.</p>
-      </div>
-
-      <div class="step" role="listitem">
-        <h3>Ongoing Support</h3>
-        <p>Weekly refreshes, sample previews, and hands-on support to improve conversion over time.</p>
-      </div>
+    <div class="grid" role="list">
+      <div class="step" role="listitem"><h3>Discovery & ICP</h3><p>We collaborate to define geography, industry, company size and decision-maker profile so lists are aligned with your goals.</p></div>
+      <div class="step" role="listitem"><h3>Multi-Source Collection</h3><p>We pull signals from public records, networks, and platforms to create a broad candidate set for verification.</p></div>
+      <div class="step" role="listitem"><h3>Human Validation</h3><p>Phone and email checks are performed to remove invalid contacts and to identify decision makers and roles.</p></div>
+      <div class="step" role="listitem"><h3>Enrichment & Tagging</h3><p>Each record is enriched with company size, role and campaign tags to enable targeted outreach strategies.</p></div>
+      <div class="step" role="listitem"><h3>Delivery Formats</h3><p>CSV, Google Sheets or CRM-ready files — with campaign-ready columns and segmentation tags for fast execution.</p></div>
+      <div class="step" role="listitem"><h3>Ongoing Support</h3><p>Weekly refreshes, sample previews and hands-on support to continuously improve conversion and ROI.</p></div>
     </div>
   </main>
 
-  <footer>
-    © 2025 LeadBridge • Verified leads — measurable results • <a href="mailto:sales.leadbridge@gmail.com" style="color:var(--neon)">sales.leadbridge@gmail.com</a>
-  </footer>
+  <footer>© 2025 LeadBridge • Verified leads that convert • <a href="mailto:sales@leadbridge.com" style="color:var(--teal)">sales@leadbridge.com</a></footer>
 
   <script>
-    // parallax background movement
     (function(){
       const speed = 0.28;
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', ()=> {
         const y = window.scrollY;
         document.body.style.backgroundPosition = `center ${-y * speed}px`;
       }, {passive:true});
