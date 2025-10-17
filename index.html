@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeadBridge - Verified Business Leads</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -13,57 +15,56 @@
     }
 
     body {
-      font-family: "Poppins", sans-serif;
-      color: #e8ecf7;
-      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      color: #f1f5ff;
+      background: linear-gradient(135deg, #000428, #004e92);
+      background-attachment: fixed;
+      overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 10, 25, 0.85);
-      z-index: -1;
+    /* Smooth fade-in animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header {
       text-align: center;
       padding: 120px 20px 70px;
-      background: linear-gradient(180deg, rgba(0,30,60,0.7), rgba(0,0,0,0));
+      animation: fadeUp 1.2s ease-in-out;
     }
 
     header h1 {
-      font-size: 3.8em;
-      font-weight: 800;
+      font-size: 3.5em;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      background: linear-gradient(90deg, #FFD700, #00C3FF);
+      background: linear-gradient(90deg, #FFD700, #00E5FF, #FF6B6B);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 15px;
-      letter-spacing: 1.5px;
+      text-shadow: 0 0 15px rgba(255,255,255,0.3);
     }
 
     header p {
       font-size: 1.3em;
-      color: #b0d4ff;
-      text-shadow: 0 0 10px rgba(0, 153, 255, 0.4);
+      color: #d0e0ff;
+      margin-top: 10px;
+      text-shadow: 0 0 10px rgba(0, 180, 255, 0.4);
     }
 
+    /* Navigation Bar */
     nav {
-      background: rgba(0, 25, 70, 0.95);
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 60px;
       padding: 18px 0;
-      border-top: 2px solid #FFD700;
-      border-bottom: 2px solid #FFD700;
+      background: linear-gradient(90deg, #001F3F, #003973, #005AA7);
+      box-shadow: 0 0 25px rgba(255,255,255,0.15);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
+      width: 100%;
     }
 
     nav a {
@@ -71,8 +72,25 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 18px;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #FFD700, #00E5FF);
       transition: 0.3s;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+      border-radius: 2px;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     nav a:hover {
@@ -80,67 +98,72 @@
       transform: scale(1.08);
     }
 
+    /* Section Design */
     section {
       text-align: center;
       padding: 100px 25px;
       max-width: 1100px;
-      margin: 80px auto;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
-      backdrop-filter: blur(4px);
-      transition: all 0.4s ease-in-out;
+      margin: 100px auto;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+      backdrop-filter: blur(6px);
+      animation: fadeUp 1.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
 
     section:hover {
-      box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+      box-shadow: 0 0 50px rgba(0, 229, 255, 0.35);
       transform: scale(1.01);
     }
 
     section h2 {
-      font-size: 2.4em;
-      font-weight: 700;
+      font-size: 2.6em;
       margin-bottom: 25px;
-      background: linear-gradient(90deg, #FFD700, #00A8FF);
+      font-weight: 700;
+      background: linear-gradient(90deg, #FFD700, #00E5FF, #FF6B6B);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     section p {
-      color: #e4eaf7;
+      color: #eef3ff;
       font-size: 18px;
-      line-height: 1.9;
+      line-height: 1.8;
       margin-bottom: 35px;
+      text-shadow: 0 0 8px rgba(0,0,0,0.4);
     }
 
     .btn {
       display: inline-block;
-      background: linear-gradient(90deg, #FFD700, #0055FF);
+      background: linear-gradient(90deg, #FFD700, #00C6FF);
       color: #000;
-      padding: 14px 32px;
-      border-radius: 5px;
+      padding: 14px 34px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 17px;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      transition: 0.3s ease-in-out;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
     }
 
     .btn:hover {
-      background: linear-gradient(90deg, #0055FF, #FFD700);
       transform: scale(1.07);
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+      background: linear-gradient(90deg, #00C6FF, #FFD700);
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
     }
 
+    /* Footer */
     footer {
-      background-color: rgba(0, 20, 60, 0.9);
+      background: linear-gradient(90deg, #001F3F, #003973, #005AA7);
       color: #ccc;
       text-align: center;
-      padding: 30px 0;
+      padding: 35px 0;
       border-top: 2px solid #FFD700;
-      margin-top: 80px;
+      margin-top: 60px;
       font-size: 15px;
+      letter-spacing: 0.5px;
     }
 
     footer span {
@@ -149,10 +172,10 @@
     }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2.5em; }
+      header h1 { font-size: 2.4em; }
       nav { flex-wrap: wrap; gap: 25px; }
-      section { padding: 60px 15px; }
-      section h2 { font-size: 1.8em; }
+      section { padding: 70px 15px; margin: 70px 15px; }
+      section h2 { font-size: 2em; }
       section p { font-size: 16px; }
     }
   </style>
@@ -160,7 +183,7 @@
 <body>
   <header>
     <h1>Welcome to LeadBridge</h1>
-    <p>Delivering Verified, Targeted & Profitable Business Leads</p>
+    <p>Connecting You with Real Buyers, Sellers & Business Growth</p>
   </header>
 
   <nav>
@@ -172,44 +195,43 @@
 
   <section id="home">
     <h2>Home</h2>
-    <p><b>LeadBridge</b> connects you directly with your next potential client.  
-    We specialize in delivering highly targeted, verified leads across industries including real estate, construction, and B2B.  
-    Our data is curated using AI-powered filters and human verification, ensuring every lead is 100% real and ready to convert.</p>
+    <p><b>LeadBridge</b> is where your next business opportunity begins.  
+    We generate accurate, verified, and high-converting business leads — so you can focus on closing deals, not searching for prospects.  
+    <br><br>
+    Our expertise covers industries like Real Estate, Construction, B2B Services, and more. With AI-driven targeting and manual verification, you get only the best quality leads.</p>
     <a href="#contact" class="btn">Get Leads Now</a>
   </section>
 
   <section id="work">
     <h2>Our Work</h2>
-    <p>We don’t just find names — we deliver opportunities.  
-    Our lead generation process combines technology, data mining, and marketing insights to identify genuine buyers and business partners for you.  
-    <br><br>Every lead is checked for accuracy, updated regularly, and customized to your niche so you can focus on growing your revenue, not your spreadsheet.</p>
-    <a href="#pricing" class="btn">See Results</a>
+    <p>We help companies achieve measurable sales growth through data precision and smart targeting.  
+    Our team collects and verifies every lead manually and technologically to ensure accuracy and relevance.  
+    <br><br>
+    We have delivered thousands of leads that turned into long-term customers.  
+    Our proven system is designed for high ROI, efficiency, and real results that matter to your business success.</p>
+    <a href="#pricing" class="btn">View Our Process</a>
   </section>
 
   <section id="pricing">
     <h2>Pricing</h2>
-    <p>Our plans are built for every scale of business:</p>
-    <p>
-      <b>Starter:</b> $99/month – Up to 300 verified leads<br>
-      <b>Professional:</b> $199/month – 800+ verified leads<br>
-      <b>Enterprise:</b> Custom plan for large-scale targeting
-    </p>
-    <p>Each package includes regular updates, lead validation reports, and customer segmentation insights.</p>
-    <a href="#contact" class="btn">Get Custom Quote</a>
+    <p>Our plans are simple, scalable, and designed to fit all business sizes.</p>
+    <p><b>Starter Plan:</b> $99/month – 300 verified leads<br>
+       <b>Professional Plan:</b> $199/month – 800 verified leads<br>
+       <b>Enterprise Plan:</b> Custom Plan – tailor-made to your exact target market</p>
+    <p>Every package includes updated, verified contacts with weekly performance reports.</p>
+    <a href="#contact" class="btn">Request a Custom Quote</a>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>We’re ready to power your business with accurate, high-converting leads.  
-    Reach out to discuss your requirements or request a free demo list.</p>
+    <p>Let’s discuss your growth goals and how we can help you reach them with verified, conversion-focused leads.</p>
     <p><b>Email:</b> sales.leadbridge@gmail.com</p>
     <p><b>Phone:</b> +92-XXX-XXXXXXX</p>
-    <p><b>Website:</b> sales.leadbridge.github.io</p>
     <a href="mailto:sales.leadbridge@gmail.com" class="btn">Send Message</a>
   </section>
 
   <footer>
-    © 2025 <span>LeadBridge</span> | Premium Business Lead Solutions
+    © 2025 <span>LeadBridge</span> | Premium Verified Business Lead Solutions
   </footer>
 </body>
 </html>
