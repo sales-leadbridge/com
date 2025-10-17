@@ -1,90 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeadBridge - Business Leads Provider</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeadBridge - Premium Business Leads</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
+
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f8fafc;
-      color: #333;
+      font-family: "Poppins", sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
     }
+
+    /* Header */
     header {
-      background-color: #1e3a8a;
-      color: white;
+      background: linear-gradient(90deg, #001f3f, #003366);
+      padding: 60px 20px;
       text-align: center;
-      padding: 40px 0 20px 0;
+      border-bottom: 2px solid gold;
     }
+
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
+      color: gold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
+
+    header p {
+      font-size: 1.1em;
+      color: #b3d4fc;
+    }
+
+    /* Navigation */
     nav {
-      background-color: #1e40af;
+      background-color: #001a33;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
+      gap: 50px;
+      padding: 18px 0;
+      border-bottom: 1px solid gold;
     }
+
     nav a {
-      color: white;
+      color: gold;
       text-decoration: none;
-      font-weight: 500;
       font-size: 16px;
+      font-weight: 600;
       transition: 0.3s;
     }
+
     nav a:hover {
-      color: #93c5fd;
+      color: #66a3ff;
     }
+
+    /* Sections */
     section {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
     }
-    h2 {
-      color: #1e3a8a;
-      font-size: 2em;
-      margin-bottom: 10px;
+
+    section h2 {
+      color: gold;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
-    p {
+
+    section p {
+      color: #e6e6e6;
       font-size: 16px;
-      max-width: 700px;
-      margin: 10px auto;
-      line-height: 1.7;
+      line-height: 1.8;
+      margin-bottom: 25px;
     }
-    footer {
-      background-color: #111827;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 14px;
-      margin-top: 50px;
-    }
+
+    /* Buttons */
     .btn {
       display: inline-block;
-      background-color: #1e40af;
-      color: white;
-      padding: 10px 20px;
+      background: linear-gradient(90deg, gold, #0033cc);
+      color: #000;
+      padding: 12px 25px;
       border-radius: 5px;
       text-decoration: none;
-      margin-top: 20px;
-      transition: 0.3s;
+      font-weight: bold;
+      transition: all 0.3s;
     }
+
     .btn:hover {
-      background-color: #2563eb;
+      background: linear-gradient(90deg, #0033cc, gold);
+      transform: scale(1.05);
+    }
+
+    /* Contact Section */
+    #contact p {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #001a33;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 2px solid gold;
+      margin-top: 50px;
+    }
+
+    footer span {
+      color: gold;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Welcome to Our Company</h1>
-    <p>We Provide All Types of Verified Business Leads</p>
+    <h1>Welcome to LeadBridge</h1>
+    <p>Premium Source for Verified Business Leads</p>
   </header>
 
   <nav>
@@ -96,9 +136,47 @@
 
   <section id="home">
     <h2>Home</h2>
-    <p>LeadBridge helps businesses grow by providing quality leads across industries such as Real Estate, Construction, Digital Marketing, and B2B sectors. We focus on accuracy and value.</p>
+    <p>
+      LeadBridge helps businesses achieve growth with high-quality, verified
+      leads across multiple industries including Real Estate, Construction,
+      Marketing, and B2B sectors. We combine data accuracy with business strategy to deliver results.
+    </p>
+    <a href="#contact" class="btn">Get Leads Now</a>
   </section>
 
   <section id="work">
     <h2>Our Work</h2>
-    <p>We’ve successfully delivered thousands of verified leads to clients all over the world. Our process ensures targeted outreach and genuine data sources to help businesses close more deals.</p>
+    <p>
+      We specialize in targeted lead generation — identifying genuine buyers,
+      investors, and clients that fit your niche perfectly. Our clients
+      consistently report higher conversion rates and faster deal closures.
+    </p>
+    <a href="#pricing" class="btn">Explore More</a>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <p>
+      Our packages are designed for flexibility and value. Whether you’re a
+      startup or an established business, our plans adapt to your goals.
+      <br /><br />
+      <b>Basic Plan:</b> $99/month<br />
+      <b>Business Plan:</b> $199/month<br />
+      <b>Enterprise Plan:</b> Custom Quote
+    </p>
+    <a href="#contact" class="btn">Get Quote</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><b>Email:</b> sales.leadbridge@gmail.com</p>
+    <p><b>Phone:</b> +92-XXX-XXXXXXX</p>
+    <p><b>Website:</b> sales.leadbridge.github.io</p>
+    <a href="mailto:sales.leadbridge@gmail.com" class="btn">Send Email</a>
+  </section>
+
+  <footer>
+    © 2025 <span>LeadBridge</span> | All Rights Reserved
+  </footer>
+</body>
+</html>
